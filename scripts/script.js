@@ -21,7 +21,6 @@ const resetGame = () => {
 }
 
 const adjustPaddingForWordLength = (word) => {
-    const wordDisplay = document.querySelector(".word-display");
     const basePadding = 20; 
     const additionalPadding = Math.max((word.length - 8) * 5, 0); 
     wordDisplay.style.paddingBottom = `${basePadding + additionalPadding}px`;
