@@ -22,7 +22,7 @@ const resetGame = () => {
 
 const adjustMarginForWordLength = (word) => {
     const baseMargin = 20; 
-    const additionalMargin = Math.max((word.length - 8) * 5, 0); 
+    const additionalMargin = Math.max((word.length - 8) * 8, 0); 
     wordDisplay.style.marginTop = `${baseMargin + additionalMargin}px`; 
 }
 
