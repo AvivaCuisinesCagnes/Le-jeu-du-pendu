@@ -47,14 +47,14 @@ const gameOver = (isVictory) => {
 
 const initGame = (button, clickedLetter) => {
     if (currentWord.toLowerCase().includes(clickedLetter.toLowerCase())) {
-        // Update correct letters
+        
         [...currentWord].forEach((letter, index) => {
             if (letter.toLowerCase() === clickedLetter.toLowerCase()) {
                 correctLetters.push(letter);
                 wordDisplay.querySelectorAll("li")[index].innerText = letter;
                 wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
             } else if (letter === ' ') {
-                // Keep spaces intact
+                
                 wordDisplay.querySelectorAll("li")[index].innerText = ' ';
                 wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
             }
