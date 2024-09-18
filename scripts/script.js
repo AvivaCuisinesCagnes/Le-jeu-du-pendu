@@ -23,7 +23,7 @@ const resetGame = () => {
 const adjustMarginForWordLength = (word) => {
     const baseMargin = 20; 
     const additionalMargin = Math.max((word.length - 8) * 5, 0); 
-    wordDisplay.style.marginUp = `${baseMargin + additionalMargin}px`; 
+    wordDisplay.style.marginTop = `${baseMargin + additionalMargin}px`; 
 }
 
 const getRandomWord = () => {
