@@ -24,7 +24,7 @@ const adjustMarginForWordLength = (word) => {
     const baseMargin = 20; 
     const additionalMargin = Math.max((word.length - 8) * 5, 0); 
     wordDisplay.style.marginBottom = `${baseMargin + additionalMargin}px`; 
-};
+}
 
 const getRandomWord = () => {
     const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
