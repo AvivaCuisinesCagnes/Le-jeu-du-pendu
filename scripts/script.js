@@ -20,10 +20,10 @@ const resetGame = () => {
     gameModal.classList.remove("show");
 }
 
-const adjustPaddingForWordLength = (word) => {
-    const basePadding = 20; 
-    const additionalPadding = Math.max((word.length - 8) * 5, 0); 
-    wordDisplay.style.paddingBottom = `${basePadding + additionalPadding}px`;
+const adjustMarginForWordLength = (word) => {
+    const baseMargin = 20; 
+    const additionalMargin = Math.max((word.length - 8) * 5, 0); 
+    wordDisplay.style.marginBottom = `${baseMargin + additionalMargin}px`; 
 };
 
 const getRandomWord = () => {
