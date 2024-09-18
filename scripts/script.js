@@ -20,11 +20,18 @@ const resetGame = () => {
     gameModal.classList.remove("show");
 }
 
+const adjustPaddingForWordLength = (word) => {
+    const wordDisplay = document.querySelector(".word-display");
+    const basePadding = 20; // Le padding de base
+    const additionalPadding = Math.max((word.length - 8) * 5, 0); // Augmenter le padding de 5px par lettre au-delà de 8 lettres
+    wordDisplay.style.paddingBottom = `${basePadding + additionalPadding}px`;
+};
 
 const getRandomWord = () => {
     const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
     currentWord = word;
     document.querySelector(".hint-text b").innerText = hint;
+    adjustPaddingForWordLength(currentWord);
     resetGame();
 }
 
@@ -60,10 +67,10 @@ const initGame = (button, clickedLetter) => {
     button.disabled = true; 
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
 
-    // Check for game over conditions
+    
     if (wrongGuessCount === maxGuesses) return gameOver(false);
     
-    // Check if the player has won
+   
     const displayedWord = [...currentWord].map((letter, index) => {
         return correctLetters.includes(letter) || letter === ' ' ? letter : '_';
     }).join('');
@@ -71,7 +78,7 @@ const initGame = (button, clickedLetter) => {
     if (displayedWord === currentWord) return gameOver(true);
 }
 
-// Create keyboard buttons and add event listeners
+
 for (let i = 97; i <= 122; i++) {
     const button = document.createElement("button");
     button.innerText = String.fromCharCode(i);
