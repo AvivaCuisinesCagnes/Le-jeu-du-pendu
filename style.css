@@ -79,6 +79,10 @@ body {
     text-transform: uppercase;
 }
 
+.word-display {
+    margin-bottom: 20px; 
+}
+
 .game-box .word-display {
     gap: 10px;
     list-style: none;
