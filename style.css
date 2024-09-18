@@ -79,9 +79,6 @@ body {
     text-transform: uppercase;
 }
 
-.word-display {
-    margin-bottom: 20px; 
-}
 
 .game-box .word-display {
     gap: 10px;
@@ -90,7 +87,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20 px; 
+    margin-top: 20px; 
 }
 
 .word-display .letter {
