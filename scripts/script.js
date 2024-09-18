@@ -23,7 +23,7 @@ const resetGame = () => {
 const adjustPaddingForWordLength = (word) => {
     const wordDisplay = document.querySelector(".word-display");
     const basePadding = 20; // Le padding de base
-    const additionalPadding = Math.max((word.length - 8) * 5, 0); // Augmenter le padding de 5px par lettre au-delà de 8 lettres
+    const additionalPadding = Math.max((word.length - 8) * 5, 0); 
     wordDisplay.style.paddingBottom = `${basePadding + additionalPadding}px`;
 };
 
