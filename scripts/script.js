@@ -30,7 +30,7 @@ const getRandomWord = () => {
     const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
     currentWord = word;
     document.querySelector(".hint-text b").innerText = hint;
-    adjustPaddingForWordLength(currentWord);
+    adjustMarginForWordLength(currentWord);
     resetGame();
 }
 
