@@ -5,11 +5,11 @@ const hangmanImage = document.querySelector(".hangman-box img");
 const gameModal = document.querySelector(".game-modal");
 const playAgainBtn = gameModal.querySelector("button");
 
-// Initializing game variables
+
 let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses = 6;
 
-// Function to reset the game
+
 const resetGame = () => {
     correctLetters = [];
     wrongGuessCount = 0;
@@ -20,7 +20,7 @@ const resetGame = () => {
     gameModal.classList.remove("show");
 }
 
-// Function to get a random word and hint
+
 const getRandomWord = () => {
     const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
     currentWord = word;
@@ -28,7 +28,7 @@ const getRandomWord = () => {
     resetGame();
 }
 
-// Function to handle game over
+
 const gameOver = (isVictory) => {
     const modalText = isVictory ? `Vous avez trouvé :` : 'Le mot était:';
     gameModal.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
@@ -37,7 +37,7 @@ const gameOver = (isVictory) => {
     gameModal.classList.add("show");
 }
 
-// Function to initialize game logic with letter guesses
+
 const initGame = (button, clickedLetter) => {
     if (currentWord.toLowerCase().includes(clickedLetter.toLowerCase())) {
         // Update correct letters
@@ -53,11 +53,11 @@ const initGame = (button, clickedLetter) => {
             }
         });
     } else {
-        // Update wrong guess count and hangman image
+        
         wrongGuessCount++;
         hangmanImage.src = `images/hangman-${wrongGuessCount}.svg`;
     }
-    button.disabled = true; // Disable the clicked button
+    button.disabled = true; 
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
 
     // Check for game over conditions
@@ -79,6 +79,5 @@ for (let i = 97; i <= 122; i++) {
     button.addEventListener("click", (e) => initGame(e.target, String.fromCharCode(i)));
 }
 
-// Start the game with a random word
 getRandomWord();
 playAgainBtn.addEventListener("click", getRandomWord);
